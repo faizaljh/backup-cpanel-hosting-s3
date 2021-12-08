@@ -32,4 +32,4 @@ path="./"
 You can get S3 Storage here: 
 
 [S3 Object Storage](https://www.jagoanhosting.com/cloud-object-storage/?utm_source=github&utm_medium=readme&utm_campaign=BackupS3&utm_id=BackupS3)
-with only 1 USD with unlimited data transfer
+with only 0.75 USD with unlimited data transfer
