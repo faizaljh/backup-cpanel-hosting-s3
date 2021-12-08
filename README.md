@@ -1,6 +1,9 @@
 # jagoanhosting-backup-cpanel-hosting-s3
 You can use this script to backup your cpanel hosting (Full Backup) to Object Storage
 
+#### Requirement:
+1. Shell Access
+
 #### Basic Flow:
 1. Doing Full Backup on Cpanel using UAPI
 2. Waiting for Full Backup Done
@@ -25,8 +28,10 @@ path="./"
 2. Setup Config
 3. Create Cron Job, your can set as you like. (daily, monthly, ETC). Every cron execute backup will process backup to S3
 ```shell script
-
+Minute	Hour	Day	Month	Weekday	Command	Actions
+0	5	*	*	*	sh /home/{user}/s3-backup.sh >> /home/{user}/s3-backup.log
 ```
+on that example will run every 5AM.
 
 #### How to get S3 Storage
 You can get S3 Storage here: 
