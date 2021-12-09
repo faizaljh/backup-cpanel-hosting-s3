@@ -4,6 +4,8 @@ username=$(whoami)
 path="./"
 
 ## Insert S3 Credentials
+S3PROTOCOL="http"
+S3ENDPOIN="global.jagoanstorage.com"
 S3KEY="******"
 S3SECRET="*****"
 bucket="****"
@@ -26,11 +28,11 @@ function BackupToS3 {
   signature=$(echo -en "${string}" | openssl sha1 -hmac "${S3SECRET}" -binary | base64)
 
   curl -X PUT -T "${path}/${file}" \
-    -H "Host: ${bucket}.global.jagoanstorage.com" \
+    -H "Host: ${bucket}.${S3ENDPOIN}" \
     -H "Date: ${date}" \
     -H "Content-Type: ${content_type}" \
     -H "Authorization: AWS ${S3KEY}:${signature}" \
-    "http://${bucket}.global.jagoanstorage.com${S3_path}${file}"
+    "${S3PROTOCOL}://${bucket}.${S3ENDPOIN}${S3_path}${file}"
 }
 
 # Create Backup using Cpanel UAPI
