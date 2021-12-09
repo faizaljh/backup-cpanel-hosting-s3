@@ -11,6 +11,8 @@ You can use this script to backup your cpanel hosting (Full Backup) to Object St
 
 #### Main Config
 ```shell script
+S3PROTOCOL="http"
+S3ENDPOIN="global.jagoanhosting.com"
 S3KEY="******"
 S3SECRET="*****"
 bucket="****"
